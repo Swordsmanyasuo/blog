@@ -1,0 +1,153 @@
+//滚动条
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(239, 239, 239);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bfbfbf;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bfbfbf;
+}
+
+::-webkit-scrollbar-corner {
+  background: #bfbfbf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0px;
+  background: #f4f4f4;
+
+  a {
+    text-decoration: none;
+    color: #1890ff;
+    font-size: 14px;
+  }
+
+  .top {
+    position: fixed;
+    top: 0;
+    z-index: 901;
+    width: 100%;
+    background: #fff;
+    height: 80px;
+    text-align: center;
+    box-shadow: 0 2px 6px 0 #ddd;
+
+    .top-container {
+      margin: 0px auto;
+      width: 1350px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+
+      .logo {
+        a {
+          color: #1890ff;
+          font-size: 25px;
+          font-weight: bold;
+          margin-right: 10px;
+        }
+      }
+
+      a.nav {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 16px;
+        color: #494949;
+        padding: 0px 15px;
+      }
+
+      a.active {
+        color: #c94646;
+      }
+    }
+  }
+
+  .body-container {
+    min-height: calc(100vh - 60px);
+    margin: 0px auto;
+    width: 1350px;
+    padding-top: 90px;
+    padding-bottom: 10px;
+  }
+}
+
+
+.pagination {
+  margin-top: 10px;
+
+  .el-pagination {
+    padding-left: 0px;
+    --el-pagination-hover-color: var(--el-color-danger);
+  }
+
+  .el-pagination.is-background .el-pager li:not(.is-disabled).is-active {
+    background-color: var(--el-color-danger);
+  }
+}
+
+
+.fade-enter-active {
+  animation: moveIn 0.15s;
+}
+
+.fade-leave-active {
+  animation: moveOut 0.15s;
+}
+
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes moveOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+}
+
+.footer {
+  height: 60px;
+  text-align: center;
+  font-size: 13px;
+  color: #939393;
+  line-height: 25px;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a {
+    font-size: 13px;
+    color: #939393;
+  }
+}
